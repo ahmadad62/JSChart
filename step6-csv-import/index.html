@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>READ CSV FILE</title>
+    </head>
+    <body>
+        <input type="file">
+        <script>
+            const inp=document.querySelector('input');
+            const fr=new FileReader();
+            fr.onload=(e)=>{
+                console.log(e.target.result);
+            }
+            inp.onchange=(e)=>{
+                const [file]=e.target.files;
+                fr.readAsBinaryString(file);
+            }
+        </script>
+    </body>
+</html>
